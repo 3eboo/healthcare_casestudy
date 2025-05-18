@@ -1,5 +1,5 @@
 import logging
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Any
 
 import psycopg2
 from psycopg2 import sql
@@ -39,7 +39,7 @@ def prepare_insert_query(table_name: str, columns: List[str]):
     )
 
 
-def insert_records(data: List[Dict], table_name: str, columns: List[str]):
+def insert_records(data: List[Dict[str, Any]], table_name: str, columns: List[str]) -> None:
     """Insert multiple records into the specified table."""
     if not data:
         logger.warning(f"[INFO] No data to insert into {table_name}.")

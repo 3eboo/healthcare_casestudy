@@ -1,6 +1,6 @@
 import json
 import logging
-from typing import List
+from typing import List, Optional, Dict, Any
 
 logging.basicConfig(
     level=logging.INFO,
@@ -9,7 +9,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def extract_json(file_path: str) -> List:
+def extract_json(file_path: str) -> List[Dict[str, Any]]:
     """Extracts JSON data from file."""
     try:
         with open(file_path, 'r') as f:

@@ -1,10 +1,15 @@
 import uuid
-from typing import Tuple, List, Dict
+from typing import Tuple, List, Dict, Any
 
 from etl.utils import mask_name
 
 
-def flatten_records(records: List[Dict]) -> Tuple[List[Dict], List[Dict], List[Dict], List[Dict]]:
+def flatten_records(records: List[Dict[str, Any]]) -> Tuple[
+    List[Dict[str, Any]],
+    List[Dict[str, Any]],
+    List[Dict[str, Any]],
+    List[Dict[str, Any]]
+]:
     patients, visits, diagnoses, treatments = [], [], [], []
 
     for patient in records:

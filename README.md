@@ -1,4 +1,4 @@
-# temedica_challenge
+# Healthcare Case Study Challenge
 
 ## Overview
 This solution transforms nested healthcare data into a structured relational model, ensuring it's validated, secure, and ready for BI analysis.
