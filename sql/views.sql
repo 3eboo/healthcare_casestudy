@@ -9,11 +9,13 @@ SELECT
     t.drug,
     t.dose
 FROM patients p
-JOIN visits_q2_2023 v ON p.patient_id = v.patient_id
+JOIN visits_2023 v ON p.patient_id = v.patient_id
 JOIN diagnoses d ON v.visit_id = d.visit_id
 JOIN treatments t ON d.diagnoses_id = t.diagnoses_id
 WHERE
-    t.drug ILIKE 'Metformin';
+    t.drug ILIKE 'Metformin'
+    AND v.visit_date >= '2023-04-01'
+    AND v.visit_date < '2023-07-01';
 
 
 -- ========================================================================
