@@ -9,7 +9,7 @@ SELECT
     t.drug,
     t.dose
 FROM patients p
-JOIN visits_2023 v ON p.patient_id = v.patient_id
+JOIN visits v ON p.patient_id = v.patient_id
 JOIN diagnoses d ON v.visit_id = d.visit_id
 JOIN treatments t ON d.diagnoses_id = t.diagnoses_id
 WHERE
